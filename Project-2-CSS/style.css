@@ -1,0 +1,56 @@
+/*Fun little style for a button*/
+button {
+    background-color: lavenderblush; 
+    border-radius: 10px; 
+    padding: 10px; 
+    border: 2px solid black; 
+    color: black; 
+    display: block; 
+    margin: 20px auto; 
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+}
+
+/*You can kinda do anything that you want with any tag*/
+/*Also I have used transitions before in CSS, it was for a presntation I made using JavaScript, CSS, and HTML*/
+div {
+    background-color: rgba(255, 255, 255, 0.438); /*VScode has a little slider that allows you to change the opacity of the rgb value and its super cool*/
+    padding: 20px;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px black;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+div:hover {
+    transform: translateY(-10px) rotateY(10deg) rotateX(5deg);
+    box-shadow: 10px 10px 20px black;
+    border: 2px solid white;
+}
+
+div {
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
