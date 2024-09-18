@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+
+<style>
+    #puzzle {
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 24px;
+    }
+
+</style>
+
+<html>
+
+    <head>
+            <title>Hangman</title>
+    </head>
+
+    <body>
+        <div id="puzzle">
+            puzzle goes here
+        </div>
+        <br>
+        <input id="guess_box" type="text">
+        <button id="guess_button" onclick="guess()">Make a guess</button>
+        <br>
+        <div id="fails">
+            Fails: <span id="fail_count">0</span> / <span id="fail_max">0</span>
+        </div>
+        <br>
+        <div id="output" style="border: 1px solid black;">
+            Output:
+        </div>
+        <br>
+        <button id="reset_button" onclick="reset_highscore()">Reset Highscore?</button>
+        <br>
+    </body>
+
+</html>
+
+<script>
+    const my_puzzle_list = ["this is a puzzle", "game over", "rythm"]
+    const my_puzzle = my_puzzle_list[Math.floor(Math.random() * my_puzzle_list.length)]
+    let current_known = ""
+    let fails = 0
+    let max_fails = 5
+
+    //The number of attempts that it takes to solve the puzzle
+    let num_attemps = 0
+
+    if(localStorage.getItem("num_attemps") == null)
+    {
+        localStorage.setItem("num_attemps", 100)
+    }
+    localStorage.getItem("num_attemps")
+    console.log("Highscore: " +  localStorage.getItem("num_attemps")) //A little cheat sheet to see high score
+
+    for(let i = 0; i < my_puzzle.length; i++){
+        if(my_puzzle.charAt(i) != " ")
+        {
+            current_known += "."
+        }
+        else
+        {
+            current_known += " "
+        }
+    }
+
+    document.getElementById("fail_max").innerHTML = max_fails   //Replace the 0 with the max number of fails allowed
+    document.getElementById("puzzle").innerHTML = current_known //Replace puzzle goes here with whatever is currently know
+
+    // Function to make a guess
+    function guess()
+    {
+		// if the puzzle has not been solved and guesses are still available
+        if(fails < max_fails && my_puzzle != current_known)
+        {
+			// store the guess entered by the player
+            const my_guess = document.getElementById("guess_box").value
+
+            // guessing the full puzzle
+            if(my_guess.length > 1)
+            {
+                // successful guess
+                if(my_guess == my_puzzle)
+                {
+                    num_attemps++ //One attempt
+                    current_known = my_puzzle
+                    document.getElementById("puzzle").innerHTML = my_puzzle
+                    document.getElementById("output").innerHTML += "<br><span style='color: green'>You did it!</span>"
+                }
+                else
+                {
+                    failed_guess()
+                }
+            }
+            else // if not guessing the full puzzle, they must be guessing a single letter
+            {
+                // successfully found a letter
+                if(my_puzzle.includes(my_guess))
+                {
+                    let new_known = ""
+                    num_attemps++ //Add one attempt
+					
+					// loop through the puzzle and build a new known puzzle based on the correct guess
+                    for(let i = 0; i < my_puzzle.length; i++)
+                    {
+                        if(my_puzzle.charAt(i) == my_guess)
+                            new_known += my_guess
+                        else
+                            new_known += current_known.charAt(i)
+                    }
+					
+					// update the current known and the display
+                    current_known = new_known
+                    document.getElementById("puzzle").innerHTML = current_known
+					
+					// if there are no periods left, the puzzle has been solved
+                    if(!current_known.includes("."))
+                    {
+                        document.getElementById("output").innerHTML += "<br>" + current_known + " is correct."
+                    }
+                }
+                else
+                {
+                    failed_guess()
+                }
+            }
+			
+			// clear the input box
+            document.getElementById("guess_box").value = ""
+        }
+        holder = localStorage.getItem("num_attemps") //Used for a test case and I just kept it
+        if(my_puzzle == current_known)
+        {
+            if(num_attemps < holder)
+            {
+                localStorage.setItem("num_attemps", num_attemps)
+                console.log(localStorage.getItem("num_attemps"))
+                document.getElementById("output").innerHTML += "<br><span>New High Score: </span>" + num_attemps 
+            }
+            else{
+                document.getElementById("output").innerHTML += "<br><span style='color: red'>None</span>" 
+            }
+        }
+    }
+
+    function failed_guess() {
+        num_attemps += 1 //Adds one more attempt to the score
+        fails++
+        document.getElementById("fail_count").innerHTML = fails
+        document.getElementById("output").innerHTML += "<br>" + document.getElementById("guess_box").value + " is incorrect."
+
+        if(fails >= max_fails){
+            document.getElementById("output").innerHTML += "<br>" + my_puzzle + " was the correct answer!"
+        }
+        
+    }
+
+    function reset_highscore() {
+        if(localStorage.getItem("num_attemps") != 100) //Only reset the highscore if it hasn't been reset
+        {
+        localStorage.setItem("num_attemps", 100)
+        console.log("Highscore: " +  localStorage.getItem("num_attemps"))
+        document.getElementById("output").innerHTML += "<br><span style='color: green'>None</span>"
+        }
+    }
+
+    document.getElementById("guess_box").addEventListener("keypress", function(event) {
+        if(event.key == "Enter"){
+            event.preventDefault()
+            document.getElementById("guess_button").click()
+        }
+    })
+</script>
