@@ -1,0 +1,73 @@
+<script src="jquery-3.7.1.js"></script>
+
+<style>
+    .our_divs{
+        color: rgb(255, 0, 247);
+    }
+
+    .new_look{
+        font-size: 24px;
+        color: purple;
+        padding-left: 5%;
+        padding-top: 5%;
+    }
+</style>
+
+<div id="first_div">
+    Hello world
+</div>
+
+<div id="second_div" class="our_divs">
+    Do you like pie, because: 
+</div>
+
+<div id="third_div" class="our_divs">
+    Click if you like pie
+</div>
+
+<input id="my_input" type="text" placeholder="Blur input">
+
+<div id="animate" style="background-color: blue;">
+    This will animate
+</div>
+<br>
+<button>Click me</button>
+
+<script>
+    $(document).ready(function(){   //Only run this code when the document is done loading
+        $("#animate").toggle()
+
+        $("#first_div").text("Changed text")
+        $("#second_div").css("background-color", "red")
+
+        $(".our_divs").css("background-color", "yellow")
+
+        $(".our_divs").click(function(){
+            $(this).append("<br>Pie is great")
+        })
+
+        $("#my_input").blur(function(){
+            $("#my_input").css("color", "yellow")   //Set the color yellow when the input is not in focus
+        })
+
+        $("#my_input").focus(function(){
+            $("#my_input").css("color", "purple")   //Set the color to purple when input is in focus
+        })
+
+        $("#third_div").click(function(){
+            $(this).addClass("new_look")
+        })
+
+        $("button").click(function(){ //Effects all buttons
+        $("#animate").toggle(2000, function(){   //Call back finction as the second peramiter
+            $("#animate").css("padding-left","25px")
+        }) 
+
+        $("#animate").animate({
+            height: '150px',
+            width: '150px'
+        })
+
+    })
+    })
+</script>
