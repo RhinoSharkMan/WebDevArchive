@@ -1,0 +1,264 @@
+<html lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="viewport" content="width=device-width, initial-scale=1.0">
+
+    <head>
+        <link href="./css/bootstrap.css" rel="stylesheet">
+        <script src="./js/bootstrap.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+        
+    </head>
+
+    <!--Two types of containers-->
+    <div class="container-fluid p-3 text-center bg-danger text-white">
+        <h1>Welcome to Rock Climbing 101</h1>
+        <p>This is the first bootstrap page</p>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Navbar</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
+                  Dropdown
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="#">Thing 1</a></li>
+                  <li><a class="dropdown-item" href="#">Thing 2</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Another thing</a></li>
+                </ul>
+              </li>
+            </ul>
+            <form class="d-flex">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+
+      <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="p-3 bg-info text-white text-center">Climbing can be</div>
+            </div>
+            <div class="col-md-6">
+                <div class="p-3 bg-warning text-white text-center">super dangours</div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container mt-3">
+        <button class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#my_collapse">Collapse Me</button>
+        <div id="my_collapse" class="collapse">
+            <table class="table table-striped mt-3">
+                <tr>
+                    <th>Style of Climbing</th>
+                    <th>Protection</th>
+                </tr>
+    
+                <tr>
+                    <td>Sport</td>
+                    <td>Rope, Quickdraws, & Bolts</td>
+                </tr>
+    
+                <tr>
+                    <td>Bouldering</td>
+                    <td>Crash pad and luck</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="container">
+        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#my_modal">Modal</button>
+        <div id="my_modal" class="modal">
+            <div class="modal-dialog"> 
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4>Modal header</h4>
+                        <button class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        This is a lot of divs
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div id="my_carousel" class="carousel slide" data-bs-ride="carousel">
+            <button class="carousel-control-prev" data-bs-target="#my_carousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+
+            <button class="carousel-control-next" data-bs-target="#my_carousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="imageOne.JPG" class="d-block w-100">
+                </div>
+                <div class="carousel-item">
+                    <img src="imageTwo.JPG" class="d-block w-100">
+                </div>
+                <div class="carousel-item">
+                    <img src="imageThree.jpg" class="d-block w-100">
+                </div>
+            </div>
+
+            <!--Carousel buttons-->
+            <div class="carousel-indicators">
+                <button data-bs-target="#my_carousel" data-bs-slide-to="0" class="active"></button>
+                <button data-bs-target="#my_carousel" data-bs-slide-to="1" class="active"></button>
+                <button data-bs-target="#my_carousel" data-bs-slide-to="2" class="active"></button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <button class="btn btn-primary" data-bs-target="#my_offcanvas" data-bs-toggle="offcanvas">Offcanvas</button>
+    </div>
+
+    <div id="my_offcanvas" class="offcanvas offcanvas-start">
+        <div class="offcanvas-header">
+            <h5>More about the world of rock climbing</h5>
+            <button class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
+        </div>
+
+        <div class="offcanvas-body">
+            <b>Early Beginnings (Pre-1900s)</b><br>
+            The roots of rock climbing in Yosemite go back to the late 19th century, though the climbs of this era were often associated with exploration and mountaineering rather than sport climbing as we know it today. During this period, most of the climbers were adventurers and naturalists who were primarily interested in reaching summits rather than tackling technical rock faces.
+
+            <br>John Muir, a renowned naturalist and one of the earliest known climbers in Yosemite, climbed Cathedral Peak in 1869. While not a rock climber in the modern sense, Muir’s summit ascent was considered an important step in human exploration of the area.
+            1930s–1940s: The Early Days of Yosemite Climbing
+            During the 1930s, a few climbers began to explore technical rock climbing in Yosemite. Their style was very rudimentary by modern standards, relying on basic techniques and limited equipment. The gear used in this era was often homemade, and the concept of free climbing (where the climber ascends using only natural holds) was still in its infancy.
+
+            <br><br>Jules Eichorn, Glen Dawson, and Dick Leonard were early pioneers who made significant ascents during this period. They were instrumental in the first major technical ascent of Yosemite’s Higher Cathedral Spire in 1934, an event that marked one of the earliest technical rock climbs in the U.S.
+            The 1940s saw a decline in climbing activity due to World War II, as many climbers were away at war. However, this decade also saw the birth of new technologies and ideas in mountaineering that would influence post-war climbing.
+
+            <br><br><b>1950s: The Birth of Big Wall Climbing</b>
+            <br>The 1950s is considered the beginning of the Golden Age of Yosemite climbing. During this decade, climbers began to seriously tackle the park’s legendary granite walls, most notably El Capitan. The idea of climbing sheer walls that stretched over 2,000 feet was revolutionary at the time.
+
+            <br><br>John Salathé, an early innovator, brought European techniques to the U.S. and developed the piton, a critical piece of equipment for Yosemite climbing. His 1947 ascent of the Lost Arrow Spire was one of the first major climbs in Yosemite to rely heavily on aid climbing, where the climber uses fixed gear (pitons, bolts, etc.) to ascend.
+
+            <br><br>Royal Robbins, Warren Harding, and Mark Powell were key figures in the 1950s. They established new routes and solidified Yosemite’s place as a world-class climbing destination. Robbins, in particular, helped pioneer The Nose on El Capitan, a feat that would take over 45 days and revolutionize the concept of big wall climbing. This route, first completed in 1958, was considered the greatest technical achievement in climbing at the time.
+
+            <br><br><b>1960s: The Golden Age</b>
+            <br>The 1960s marked the true Golden Age of Yosemite climbing, where the sport began to develop a unique culture and ethos, distinct from European mountaineering. This era was defined by the clash between different ethical approaches to climbing, particularly between Royal Robbins and Warren Harding, two legendary figures.
+
+            <br><br>Royal Robbins was a strong proponent of “clean climbing,” where climbers would leave as little impact on the rock as possible. He argued against over-reliance on pitons and bolts, which could damage the rock permanently. His climbs reflected this ethic, as he sought to push the limits of free climbing and minimal aid.
+
+            <br><br>Warren Harding, on the other hand, was more pragmatic and results-oriented. He used siege tactics on big walls, relying on fixed ropes, bolts, and extensive aid gear to reach the top, most famously in his first ascent of the Dawn Wall on El Capitan in 1970. His route was completed in the face of intense criticism from Robbins and other climbers, who saw it as a betrayal of their minimalist ideals.
+
+            <br><br>This tension between climbing styles would continue to shape Yosemite climbing culture.
+
+            <br><br><b>1970s: The Rise of Free Climbing and New Technologies</b>
+            <br>The 1970s saw significant advancements in climbing equipment, as well as the emergence of free climbing as the dominant style in Yosemite. The development of nuts (passive protection) and cams (spring-loaded devices for securing in cracks) allowed climbers to protect themselves without hammering pitons into the rock, leading to the rise of clean climbing.
+
+            <br><br>Yvon Chouinard, a key figure in the clean climbing movement, developed lightweight aluminum nuts and encouraged their use over pitons. He also founded Chouinard Equipment (which would later become Patagonia), a company dedicated to producing climbing gear that minimized environmental impact.
+
+            <br><br>Jim Bridwell emerged as one of the leading climbers of the 1970s. Bridwell and his partners, including John Long, Billy Westbay, and John Bachar, pushed free climbing to new heights. In 1975, they completed the first one-day ascent of The Nose, a major milestone that redefined the possibilities of big wall climbing.
+
+            <br><br> During this time, Yosemite became the epicenter for a growing climbing community. Climbers gathered in Camp 4, an informal campground in the valley, to live cheaply and climb the walls. This created a countercultural scene where climbing was as much about personal expression and rebellion as it was about athletic achievement.
+
+            <br><br><b>1980s–1990s: The Modern Era and the Dawn of Sport Climbing</b>
+            <br>By the 1980s, climbing had begun to shift again, with the rise of sport climbing, which focused on shorter, bolted routes that could be climbed without the extensive gear and logistics required for big wall ascents. This shift was somewhat controversial in Yosemite, where climbers had long prided themselves on traditional (trad) climbing ethics.
+
+            <br><br>However, Lynn Hill would shatter traditional notions of what was possible in Yosemite by becoming the first person to free climb The Nose in 1993. This ascent, particularly by a woman, was a groundbreaking achievement that demonstrated the possibilities of free climbing on big walls. Her motto, “It goes, boys!” is now legendary in climbing circles.
+
+            <br><br>Tommy Caldwell and Kevin Jorgeson would continue to push the boundaries of free climbing in Yosemite into the 21st century. Their historic first free ascent of the Dawn Wall in 2015, after weeks of effort on the wall, was one of the most difficult climbing feats ever accomplished. The Dawn Wall had long been considered one of the hardest routes in the world, and their success marked a new pinnacle for climbing in Yosemite.
+            The Cultural and Ethical Evolution of Yosemite Climbing
+            <br><br>Yosemite climbing evolved not only as a sport but also as a lifestyle and a form of cultural rebellion. By the 1960s and 1970s, climbers living in Camp 4 were often seen as countercultural figures, rebelling against mainstream society’s norms. They lived on the margins, scraping by on minimal resources, and climbing became a form of personal expression.
+
+            <br><br>Ethically, the tension between free climbing and aid climbing, as well as clean climbing versus fixed protection, has shaped much of the debate in the Yosemite climbing community. While aid climbing and the use of fixed gear are still practiced, free climbing is now seen as the purest form of the sport. The community has also adopted a deep reverence for the natural beauty of Yosemite, leading to the widespread adoption of Leave No Trace ethics.
+
+            <br><br><b>Yosemite’s Global Influence</b>
+            <br>Yosemite’s towering walls, particularly El Capitan and Half Dome, have made it the mecca of rock climbing globally. The routes established here continue to attract climbers from around the world, and many of the techniques, gear innovations, and ethical debates that arose in Yosemite have shaped rock climbing globally.
+
+            <br><br>Moreover, climbing has become more accessible over time. With the advent of climbing gyms, sport climbing, and competitions, the once fringe sport has entered the mainstream, but Yosemite remains the pinnacle for those seeking the ultimate test of skill, endurance, and mental fortitude.
+
+            <br><br>In summary, Yosemite has been the proving ground for nearly every significant advancement in American climbing, from the advent of big wall techniques to the rise of free climbing. Its legacy as the heart of rock climbing in the U.S. remains unchallenged.
+        </div>
+    </div>
+
+    <div class="container"> 
+        <form>
+            <div class="mb-3">
+                <label for="my_email" class="form-label">Email address</label>
+                <input id="my_email" class="form-control" type="email">
+                <div id="email_help" class="form-text">We'll never share your email with anyone else.</div>
+            </div>
+        </form>
+    </div>
+
+    <div class="container">
+    <div class="accordion" id="accordionExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingOne">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              Climbing style 1
+            </button>
+          </h2>
+          <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <strong>Trad climbing: </strong> Definition: Trad climbing involves placing removable protection (like nuts and camming devices) in natural features of the rock as you ascend.
+              Gear: Climbers carry a rack of gear and place protection as they climb. If they fall, the gear can hold them, but it relies on the rock's integrity.
+              Ethics: Emphasizes minimal impact on the rock and the environment. Climbers often aim to leave the route as they found it.
+              Risk: Generally considered riskier, as the gear placements can be unreliable, and falls can lead to longer falls or injury.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingTwo">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              Climbing style 2
+            </button>
+          </h2>
+          <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <strong>Sport climbing: </strong> Definition: Sport climbing features pre-placed fixed protection, such as bolts, along the climbing route.
+              Gear: Climbers use a harness, quickdraws, and a rope, but the bolts are already in place, allowing for easier ascent and less gear placement.
+              Ethics: Focuses on athletic performance and skill rather than gear placement. Routes can be more challenging but are often considered safer than trad routes.
+              Risk: Falls are generally shorter and more controlled due to the fixed protection.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingThree">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              Climbing style 3
+            </button>
+          </h2>
+          <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <strong>Bouldering: </strong>Definition: Bouldering involves climbing shorter walls (usually under 20 feet) without the use of ropes or harnesses. Instead, climbers use crash pads for protection against falls.
+              Gear: Requires minimal equipment—typically just climbing shoes and crash pads.
+              Ethics: Encourages creativity in movement and problem-solving on specific boulder problems (routes).
+              Risk: While falls can still cause injury, the height and risks are lower due to the absence of ropes.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</html>
