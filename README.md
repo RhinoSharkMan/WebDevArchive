@@ -1,2 +1,2 @@
-# IT_353_Web_Dev
-All my programs from IT 353
+# WebDevArchive
+A number of small projects aimmed at learning aspects of web development
